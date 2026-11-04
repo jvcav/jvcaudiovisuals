@@ -74,11 +74,8 @@
                 <a href="#projectes" class="hover:text-brand-accent transition-colors">Projectes</a>
                 <a href="#clients" class="hover:text-brand-accent transition-colors">Clients</a>
                 <!-- Selector d'Idioma Natiu i Netejat -->
-                <div class="flex items-center bg-brand-dark px-2 py-1 rounded-full border border-brand-border/60 text-xs font-bold gap-1">
-                    <button onclick="translatePage('ca')" class="px-2 py-0.5 rounded-full hover:bg-brand-accent hover:text-slate-950 transition-all">CAT</button>
-                    <button onclick="translatePage('es')" class="px-2 py-0.5 rounded-full hover:bg-brand-accent hover:text-slate-950 transition-all">ESP</button>
-                    <button onclick="translatePage('en')" class="px-2 py-0.5 rounded-full hover:bg-brand-accent hover:text-slate-950 transition-all">ENG</button>
-                </div>
+                <div id="google_translate_element"></div>
+            
                 <a href="#contacte" data-i18n="nav.contactar" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-brand-accent to-brand-cyan text-slate-950 font-semibold hover:opacity-90 transition-all shadow-md hover:shadow-brand-accent/20">
                     Contactar
                 </a>
@@ -796,11 +793,35 @@
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
                    <!-- Selector d'Idioma Natiu i Netejat -->
-        <div class="flex items-center bg-brand-dark px-2 py-1 rounded-full border border-brand-border/60 text-xs font-bold gap-1">
-                    <button onclick="translatePage('ca')" class="px-2 py-0.5 rounded-full hover:bg-brand-accent hover:text-slate-950 transition-all">CAT</button>
-                    <button onclick="translatePage('es')" class="px-2 py-0.5 rounded-full hover:bg-brand-accent hover:text-slate-950 transition-all">ESP</button>
-                    <button onclick="translatePage('en')" class="px-2 py-0.5 rounded-full hover:bg-brand-accent hover:text-slate-950 transition-all">ENG</button>
-        </div>     
+<!-- Script de Google Translate -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'ca',
+      includedLanguages: 'ca,es,en',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+      autoDisplay: false
+    }, 'google_translate_element');
+  }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<style>
+  /* Integració visual amb els colors de JVC Audiovisuals (#4a4e51 i accent #BFC692) */
+  .goog-te-combo {
+    padding: 6px 10px;
+    border-radius: 6px;
+    background-color: #4a4e51;
+    color: white;
+    border: 1px solid #BFC692;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  /* Ocultar la barra superior que sol posar Google per defecte */
+  body { top: 0px !important; }
+  .goog-te-banner-frame { display: none !important; }
+  .skiptranslate { display: inline-block; }
+</style> 
     </script>
 </body>
 </html>
